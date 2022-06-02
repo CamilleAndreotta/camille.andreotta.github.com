@@ -12,7 +12,7 @@
     "nav"
     "main"
     "footer";
-    grid-template-rows: 4em 8em 1fr 4em;  
+    grid-template-rows: 4em 12em 1fr 7em;  
     grid-column: auto;
 }
 
@@ -25,7 +25,7 @@
     "header"
     "main"
     "footer";
-    grid-template-rows: 4em 1fr 4em;  
+    grid-template-rows: 4em 1fr 7em;  
     grid-column: auto;
 }
 
@@ -146,10 +146,28 @@ header{
 
 /*Affichage de la section nav*/
 .nav__open{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: nav;
     width: 100%;
     height: auto;
-    background-color:yellow;
+    background-color:#FFC300 ;
+    margin: 0.5em 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li {
+    font-family: 'Metrophobic';
+    font-weight: bold;
+    margin: 0.25em;
+    padding: 0.25em;
 }
 
 
@@ -182,11 +200,30 @@ main{
 .main__flex{
     display: flex;
     flex-direction: row;
-    margin: 1em 0
+    margin: 1em 0;
+}
+
+.main__flex--texte{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    box-sizing: border-box;
+    border-radius: 5px 0 0 5px;
+}
+
+.main__flex--img{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
 }
 
 .main__flex--button{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
@@ -194,10 +231,59 @@ main{
 }
 
 .main__flex--button-contact{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80px;
     height: 80px;
-    border: 1px solid black;
+    background-color: #2A8574;
+    border-radius: 90px;      
+}
+
+.main__ul
+{
+    font-family: 'Metrophobic';
+    list-style-type: circle;
+}
+
+.color-1 {
+    background-color: #462a85;
+}
+
+.color-2 {
+    background-color: #69852a;
+}
+
+.color-3 {
+    background-color: #852A3C;
+}
+
+.color-4{
+    background-color: #2A8574;
+}
+
+.color-5 {
+    background-color: #FFC300;
+}
+
+.color-6{
+    background-color: #889A65;
+}
+
+
+
+/*Mise en forme des images */
+
+.photo{
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 90px;
+}
+
+.icone{
+    width: 40px;
+    height: 40px; 
 }
 
 
@@ -214,16 +300,129 @@ h2{
     text-align: center;
 }
 
+h3{ 
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.5em;
+    text-align: center;
+}
+
 p{  
-    font-family: 'Metrophobic';
     font-size: 0.8em;
     font-weight: 500;
     text-align: justify;
+    margin: 0.5em;
 }
 
+.bold{
+    font-family: 'Metrophobic';
+    font-size: 1em;
+    text-align: justify;
+    margin: 0.5em;
+}
+
+
+/*Effets sur le texte*/
+
+#elt1 .typewriter h3 {
+    width: 40%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+#elt2 .typewriter h3 {
+    width: 60%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+  #elt3 .typewriter h3 {
+    width: 50%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+  #elt4 .typewriter h3 {
+    width: 60%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+  #elt5 .typewriter h3 {
+    width: 60%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to {width: 40% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+
+/*Personnalisation du footer*/
 footer{
     grid-area : footer;
     width: 100%;
-    height: 4em;
-    background-color: black;
+    height: 7em;
+    background-color: #2A8574 ;
+    border-radius: 8px;
+}
+
+.footer__flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em 0;
+}
+
+.footer__flex--button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: auto;
+}
+
+.footer__flex--button-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: #2A8574;
+    border-radius: 90px;      
 }
