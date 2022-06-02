@@ -3,8 +3,11 @@
 /*Mise en forme du template en mode mobile first avec l'utilistion du grid*/
 
 /*Class-CSS pour faire apparaitre le menu lorsque l'on clique sur le bouton menu*/
+body{
+    margin: 0%;
+}
 .container__flex--displayMenu{
-    width: auto;
+    width: 100%;
     height: auto;
     display: grid;
     grid-template-areas: 
@@ -12,13 +15,15 @@
     "nav"
     "main"
     "footer";
-    grid-template-rows: 4em 12em 1fr 7em;  
-    grid-column: auto;
+    grid-template-rows: 4em 12em 1fr auto;  
+    grid-template-columns: auto;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /*Class-CSS pour faire disparaitre le menu lorsque l'on clique sur le bouton menu*/
 .container__flex--displayMenuNone{
-    width: auto;
+    width: 100%;
     height: auto;
     display: grid;
     grid-template-areas: 
@@ -26,7 +31,9 @@
     "main"
     "footer";
     grid-template-rows: 4em 1fr 7em;  
-    grid-column: auto;
+    grid-template-columns: auto;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /*! Mise en forme du header et de ses composants*/
@@ -34,9 +41,11 @@ header{
     display: flex;
     flex-direction: row;
     grid-area: header;
-    width: 100%;
+    width: 98%;
     height: 4em;
     border-radius: 8px;
+    box-sizing: border-box;
+    margin: auto;
 }
 .header__title{
     display: flex;
@@ -46,6 +55,7 @@ header{
     height: auto;
     background-color: #2A8574 ;
     border-radius: 8px 0 0 8px;
+    box-sizing: border-box;
 }
 
 .header__btn{
@@ -56,6 +66,7 @@ header{
     height: auto;
     background-color: #2A8574 ;
     border-radius: 0 8px 8px 0;
+    box-sizing: border-box;
     
 }
 
@@ -146,40 +157,43 @@ header{
 
 /*Affichage de la section nav*/
 .nav__open{
+    width: 98%;
     display: flex;
     justify-content: center;
     align-items: center;
     grid-area: nav;
-    width: 100%;
     height: auto;
     background-color:#FFC300 ;
-    margin: 0.5em 0;
+    margin: 0.1em auto;
     border-radius: 5px;
     box-sizing: border-box;
-
 }
 
 nav ul{
+    display: inline-block;
     list-style: none;
+    text-align: center;
+    padding: 0;
 }
 
 nav ul li {
     font-family: 'Metrophobic';
     font-weight: bold;
     margin: 0.25em;
-    padding: 0.25em;
 }
 
 
 /*! Mise en forme du main*/
 main{
     grid-area: main;
-    width: 100%;
+    width: 98%;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    margin: auto;
 }
 
 .main__elt-none{
@@ -240,10 +254,26 @@ main{
     border-radius: 90px;      
 }
 
-.main__ul
-{
+.main__ul{
     font-family: 'Metrophobic';
     list-style-type: circle;
+}
+
+.main__single--button{
+    display: block;
+    width: 120px;
+    height: 120px;
+}
+
+.main__single{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 120px;
+    height: 120px;
 }
 
 .color-1 {
@@ -276,8 +306,8 @@ main{
 
 .photo{
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 90px;
 }
 
@@ -290,7 +320,7 @@ main{
 /*Mise en forme des titres, paragraphe, etc*/
 h1{
     font-family: 'Cabin Sketch', cursive;
-    font-size: 1.75em;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -302,12 +332,12 @@ h2{
 
 h3{ 
     font-family: 'Cabin Sketch', cursive;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
 }
 
 p{  
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 500;
     text-align: justify;
     margin: 0.5em;
@@ -396,10 +426,11 @@ p{
 /*Personnalisation du footer*/
 footer{
     grid-area : footer;
-    width: 100%;
+    width: 98%;
     height: 7em;
     background-color: #2A8574 ;
     border-radius: 8px;
+    margin: auto;
 }
 
 .footer__flex{
@@ -425,4 +456,292 @@ footer{
     height: 80px;
     background-color: #2A8574;
     border-radius: 90px;      
+}
+
+@media screen and (min-width:426px) {
+
+    body{
+        margin: 0%;
+    }
+    .container__flex--displayMenu{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer";
+        grid-template-rows: 4em auto auto;  
+        grid-column: 30% 70%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    /*Class-CSS pour faire disparaitre le menu lorsque l'on clique sur le bouton menu*/
+    .container__flex--displayMenuNone{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "footer footer";
+        grid-template-rows: 4em 1fr auto;  
+        grid-column: auto;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .nav__open{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: nav;
+        height: auto;
+        background-color:#FFC300 ;
+        margin: 0.1em 0.5em ;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    main{
+        grid-area: main;
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin: auto;
+    }
+
+    .photo{
+        display: block;
+        width: 150px;
+        height: 150px;
+        border-radius: 90px;
+    }
+
+    p{  
+        font-size: 1em;
+        font-weight: 500;
+        text-align: justify;
+        margin: 0.5em;
+    }
+   
+}
+
+@media screen and (min-width:1025px) {
+
+body{
+    margin: 0%;
+}
+
+.container__flex--displayMenu{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer";
+    grid-template-rows: 4em auto auto;  
+    grid-template-columns: 30em auto;
+    margin: 0;
+    box-sizing: border-box;
+}
+    
+/*Class-CSS pour faire disparaitre le menu lorsque l'on clique sur le bouton menu*/
+.container__flex--displayMenuNone{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "footer footer";
+    grid-template-rows: 4em 1fr auto;  
+    grid-template-columns: auto;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav__open{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: nav;
+    height: auto;
+    background-color:#FFC300 ;
+    margin: 0.1em 1.1em ;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+    
+main{
+    grid-area: main;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.photo{
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 90px;
+}
+
+p{  
+    font-size: 1em;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0.5em;
+}
+
+nav ul{
+    font-size: 1.5em;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+    
+nav ul li {
+    font-family: 'Metrophobic';
+    font-weight: bold;
+    margin: 0.25em;
+}
+
+.icone{
+    width: 80px;
+    height: 80px; 
+}
+
+.main__flex--button-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 90px;      
+}
+
+    /*Mise en forme des titres, paragraphe, etc*/
+h1{
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 2em;
+    text-align: center;
+}
+
+h2{ 
+    font-family: 'Metrophobic';
+    font-size: 2em;
+    text-align: center;
+}
+
+h3{ 
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+p{  
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0.5em;
+}
+
+.bold{
+    font-family: 'Metrophobic';
+    font-size: 1.5em;
+    text-align: justify;
+    margin: 0.5em;
+}
+
+/*Effets sur le texte*/
+
+#elt1 .typewriter h3 {
+    width: 30%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+#elt2 .typewriter h3 {
+    width: 40%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+#elt3 .typewriter h3 {
+    width: 40%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+#elt4 .typewriter h3 {
+    width: 40%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+#elt5 .typewriter h3 {
+    width: 40%;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 2s steps(11),
+      blink-caret .75s step-end infinite;
+  }
+
+  /* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to {width: 30% }
+  }
+  
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+.main__ul{
+    font-family: 'Metrophobic';
+    list-style-type: circle;
+    font-size: 1.5em;
+}
+
+    
+   
 }
